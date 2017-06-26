@@ -8,7 +8,7 @@ MAINTAINER Deepak K. Tanwar, dktanwar@hotmail.com
 
 
 # Adding the tool definitions to the container
-ADD my_tool_list.yml $GALAXY_ROOT/chip_seq_tool_list.yml
+ADD chip_seq_tool_list.yml $GALAXY_ROOT/chip_seq_tool_list.yml
 
 # Install deepTools
 RUN install-tools $GALAXY_ROOT/chip_seq_tool_list.yml
