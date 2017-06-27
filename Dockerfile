@@ -26,5 +26,4 @@ CMD ["/usr/bin/startup"]
 
 ADD Galaxy-Workflow-ChIP_Seq_workflow.ga $GALAXY_ROOT/workflows/
 
-workflow-install --workflow_path $GALAXY_HOME/workflows/ -g http://localhost:8080 
-        -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
+workflow-install --workflow_path $GALAXY_HOME/workflows/ -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
