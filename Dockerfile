@@ -23,3 +23,7 @@ EXPOSE :8800
 
 # Autostart script that is invoked during container start
 CMD ["/usr/bin/startup"]
+
+ADD Galaxy-Workflow-ChIP_Seq_workflow.ga $GALAXY_ROOT/workflows/
+
+RUN workflow-install --workflow_path $GALAXY_ROOT/workflows/
