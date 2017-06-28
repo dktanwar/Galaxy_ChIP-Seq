@@ -10,8 +10,10 @@ MAINTAINER Deepak K. Tanwar, dktanwar@hotmail.com
 # Adding the tool definitions to the container
 ADD chip_seq_tool_list.yml $GALAXY_ROOT/chip_seq_tool_list.yml
 
-# Install deepTools
+# Install tools
 RUN install-tools $GALAXY_ROOT/chip_seq_tool_list.yml
+
+mkdir -p $GALAXY_HOME/workflows
 
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/data/", "/var/lib/docker"]
@@ -26,4 +28,6 @@ CMD ["/usr/bin/startup"]
 
 ADD Galaxy-Workflow-ChIP_Seq_workflow.ga $GALAXY_ROOT/workflows/
 
-workflow-install --workflow_path $GALAXY_HOME/workflows/ -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
+RUN startup_lite && \
+    sleep 30 && \
+    workflow-install --workflow_path $GALAXY_HOME/workflows/ -g http://localhost:8080 -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
