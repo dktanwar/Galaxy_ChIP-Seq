@@ -13,7 +13,7 @@ ADD chip_seq_tool_list.yml $GALAXY_ROOT/chip_seq_tool_list.yml
 # Install tools
 RUN install-tools $GALAXY_ROOT/chip_seq_tool_list.yml
 
-mkdir -p $GALAXY_HOME/workflows
+RUN mkdir -p $GALAXY_HOME/workflows
 
 # Mark folders as imported from the host.
 VOLUME ["/export/", "/data/", "/var/lib/docker"]
