@@ -26,12 +26,12 @@ RUN startup_lite && \
 
 
 # Add visualisations
-RUN curl -sL https://github.com/bgruening/galaxytools/archive/master.tar.gz > master.tar.gz && \
-    tar -xf master.tar.gz galaxytools-master/visualisations && \
-    cp -r galaxytools-master/visualisations/dotplot/ config/plugins/visualizations/ && \
-    cp -r galaxytools-master/visualisations/dbgraph/ config/plugins/visualizations/ && \
-    rm -rf master.tar.gz rm galaxytools-master
+#RUN curl -sL https://github.com/bgruening/galaxytools/archive/master.tar.gz > master.tar.gz && \
+#    tar -xf master.tar.gz galaxytools-master/visualisations && \
+#    cp -r galaxytools-master/visualisations/dotplot/ config/plugins/visualizations/ && \
+#    cp -r galaxytools-master/visualisations/dbgraph/ config/plugins/visualizations/ && \
+#    rm -rf master.tar.gz rm galaxytools-master
 
 # Container Style
-ADD assets/img/full_logo.png $GALAXY_CONFIG_DIR/web/welcome_image.png
-ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
+#ADD assets/img/full_logo.png $GALAXY_CONFIG_DIR/web/welcome_image.png
+#ADD welcome.html $GALAXY_CONFIG_DIR/web/welcome.html
