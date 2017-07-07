@@ -22,7 +22,7 @@ ADD Galaxy-Workflow-ChIP_Seq_workflow.ga $GALAXY_ROOT/workflows/
 # Download training data and populate the data library
 RUN startup_lite && \
     sleep 30 && \
-    workflow-install --workflow_path $GALAXY_HOME/workflows/ -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
+    workflow-install --workflow_path $GALAXY_HOME/workflows/ -g http://localhost:8080 -u $GALAXY_DEFAULT_ADMIN_USER -p $GALAXY_DEFAULT_ADMIN_PASSWORD
 
 
 # Add visualisations
