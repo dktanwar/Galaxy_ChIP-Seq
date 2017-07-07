@@ -17,7 +17,7 @@ ADD chip_seq_tool_list.yml $GALAXY_ROOT/chip_seq_tool_list.yml
 RUN install-tools $GALAXY_ROOT/chip_seq_tool_list.yml
 
 # Add workflow
-ADD Galaxy-Workflow-ChIP_Seq_workflow.ga $GALAXY_ROOT/workflows/
+ADD ./chip-workflow/* $GALAXY_ROOT/workflows/
 
 # Download training data and populate the data library
 RUN startup_lite && \
