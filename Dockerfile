@@ -2,19 +2,19 @@
 #
 # VERSION       0.1
 
-FROM bgruening/galaxy-stable:17.05
+FROM bgruening/galaxy-stable
 
 MAINTAINER Deepak K. Tanwar, dktanwar@hotmail.com
 
 ENV GALAXY_CONFIG_BRAND="ChIP-Seq flavoured Galaxy"
-
-RUN mkdir -p $GALAXY_HOME/workflows
 
 # Adding the tool definitions to the container
 ADD chip_seq_tool_list.yml $GALAXY_ROOT/chip_seq_tool_list.yml
 
 # Install tools
 RUN install-tools $GALAXY_ROOT/chip_seq_tool_list.yml
+
+RUN mkdir -p $GALAXY_HOME/workflows
 
 # Add workflow
 ADD ./chip-workflow/* $GALAXY_ROOT/workflows/
